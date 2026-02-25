@@ -2,10 +2,15 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Play, ChevronRight, Calendar, Flame } from 'lucide-react';
 import { supabase } from '../lib/supabase';
-import type { Workout, SessionLog } from '../lib/supabase';
+import type { Workout } from '../lib/supabase';
 import { Layout, T } from '../components/Layout';
 
-interface SessionWithWorkout extends SessionLog {
+interface SessionWithWorkout {
+    id: string;
+    workout_id: string;
+    started_at: string;
+    completed_at: string | null;
+    notes: string | null;
     workout?: { name: string; color: string };
 }
 
