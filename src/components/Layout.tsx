@@ -38,8 +38,8 @@ export function Layout({ children, title, subtitle, right, hideHeader }: LayoutP
             <div style={{
                 position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 0,
                 background: `
-                    radial-gradient(ellipse 90% 45% at 50% -5%, rgba(90,50,180,0.13) 0%, transparent 65%),
-                    radial-gradient(ellipse 55% 35% at 95% 98%, rgba(120,28,28,0.10) 0%, transparent 55%)
+                    radial-gradient(ellipse 90% 45% at 50% -5%, rgba(120,80,220,0.18) 0%, transparent 65%),
+                    radial-gradient(ellipse 55% 35% at 95% 98%, rgba(180,50,50,0.12) 0%, transparent 55%)
                 `,
             }} />
 
@@ -48,9 +48,9 @@ export function Layout({ children, title, subtitle, right, hideHeader }: LayoutP
                 <header style={{
                     position: 'sticky', top: 0, zIndex: 50,
                     padding: '14px 20px',
-                    backdropFilter: 'blur(28px) saturate(0.9)',
-                    background: 'rgba(5,5,8,0.97)',
-                    borderBottom: `1px solid rgba(80,55,130,0.22)`,
+                    backdropFilter: 'blur(28px) saturate(1.1)',
+                    background: 'rgba(20,17,32,0.97)',
+                    borderBottom: `1px solid rgba(120,90,190,0.30)`,
                     // Scratch texture on header
                     backgroundImage: `repeating-linear-gradient(-46deg, transparent, transparent 3px, rgba(255,255,255,0.007) 4px, transparent 5px)`,
                     display: 'grid',
@@ -65,8 +65,8 @@ export function Layout({ children, title, subtitle, right, hideHeader }: LayoutP
                         <div style={{
                             width: '44px', height: '44px', borderRadius: '12px',
                             overflow: 'hidden',
-                            border: `2px solid rgba(106,63,199,0.45)`,
-                            boxShadow: `0 0 18px rgba(106,63,199,0.30), 0 0 40px rgba(106,63,199,0.08), inset 0 0 10px rgba(0,0,0,0.7)`,
+                            border: `2px solid rgba(138,92,246,0.55)`,
+                            boxShadow: `0 0 18px rgba(138,92,246,0.35), 0 0 40px rgba(138,92,246,0.10), inset 0 0 10px rgba(0,0,0,0.4)`,
                             marginBottom: '6px',
                         }}>
                             <img src={logoBase64} alt="LightWeight" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
@@ -74,7 +74,7 @@ export function Layout({ children, title, subtitle, right, hideHeader }: LayoutP
                         <div style={{
                             fontFamily: "'Oswald', sans-serif",
                             fontSize: '17px', fontWeight: 700, letterSpacing: '0.14em',
-                            color: '#ccc8dc',
+                            color: T.textPrimary,
                             lineHeight: 1,
                         }}>
                             {title || 'LIGHT WEIGHT'}
@@ -104,8 +104,8 @@ export function Layout({ children, title, subtitle, right, hideHeader }: LayoutP
             <nav style={{
                 position: 'sticky', bottom: 0,
                 backdropFilter: 'blur(28px)',
-                background: 'rgba(5,5,8,0.98)',
-                borderTop: `1px solid rgba(80,55,130,0.20)`,
+                background: 'rgba(20,17,32,0.98)',
+                borderTop: `1px solid rgba(120,90,190,0.28)`,
                 display: 'flex', justifyContent: 'space-around',
                 padding: 'max(12px, env(safe-area-inset-bottom)) 0 12px',
                 zIndex: 50,
@@ -118,7 +118,7 @@ export function Layout({ children, title, subtitle, right, hideHeader }: LayoutP
                             display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px',
                             background: 'none', border: 'none', cursor: 'pointer',
                             padding: '4px 16px',
-                            color: active ? '#9d88d4' : T.textMuted,
+                            color: active ? '#b8a4f8' : T.textMuted,
                             transition: 'color 0.15s',
                             position: 'relative',
                         }}>
@@ -127,7 +127,7 @@ export function Layout({ children, title, subtitle, right, hideHeader }: LayoutP
                                     position: 'absolute', top: '-1px', left: '50%',
                                     transform: 'translateX(-50%)',
                                     width: '28px', height: '2px',
-                                    background: `linear-gradient(90deg, transparent, #6a3fc7, transparent)`,
+                                    background: `linear-gradient(90deg, transparent, #8a5cf6, transparent)`,
                                     borderRadius: '2px',
                                 }} />
                             )}

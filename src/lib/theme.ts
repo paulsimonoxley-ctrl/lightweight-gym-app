@@ -1,24 +1,23 @@
-// ─── Rusted / Industrial theme ───────────────────────────────────────────────
-// All colours desaturated, aged, muted — concrete, iron, rust
+// ─── Industrial theme (lightened for readability) ────────────────────────────
 export const T = {
-    bg: '#070708',
-    surface: 'rgba(12,10,16,0.98)',
-    surfaceSolid: '#0c0a10',
-    border: 'rgba(80,55,130,0.18)',
-    borderGlow: 'rgba(100,70,160,0.30)',
-    // Primary: aged/muted purple-iron, not electric violet
-    violet: '#6a3fc7',
-    violetGlow: 'rgba(106,63,199,0.22)',
-    // Secondary: deep rust, not neon red
-    crimson: '#8b2222',
-    crimsonGlow: 'rgba(139,34,34,0.22)',
-    electric: '#3a6a80',    // muted gunmetal blue
-    green: '#3a5c3a',       // dark moss green
-    textPrimary: '#ccc8dc', // aged off-white, not bright white
-    textMuted: '#524f68',
-    textDim: '#2c2a3a',
-    concrete: '#111016',
-    iron: '#1a182a',
+    bg: '#12111a',
+    surface: 'rgba(28,25,40,0.97)',
+    surfaceSolid: '#1c1928',
+    border: 'rgba(120,90,190,0.28)',
+    borderGlow: 'rgba(140,100,210,0.45)',
+    // Primary accent: vivid-enough purple
+    violet: '#8a5cf6',
+    violetGlow: 'rgba(138,92,246,0.30)',
+    // Secondary: mid rust-red
+    crimson: '#c0392b',
+    crimsonGlow: 'rgba(192,57,43,0.28)',
+    electric: '#4a9ab5',    // readable teal-blue
+    green: '#4a8c5c',       // mid moss green
+    textPrimary: '#eae7f5', // near-white, easy on eyes
+    textMuted: '#8a86a8',   // lifted from near-invisible
+    textDim: '#5a5670',     // lifted from near-black
+    concrete: '#1c1928',
+    iron: '#252336',
 };
 
 // ─── Map bright DB workout colours → muted rusted equivalents ────────────────
