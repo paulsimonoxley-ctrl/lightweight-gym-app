@@ -4,7 +4,7 @@ import { Play, ChevronRight, Calendar } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import type { Workout } from '../lib/supabase';
 import { Layout, T, muteWorkoutColor } from '../components/Layout';
-import { LogoBadge } from '../components/LogoBadge';
+import { logoBase64 } from '../lib/logoBase64';
 
 interface SessionWithWorkout {
     id: string;
@@ -46,7 +46,7 @@ export function HomeScreen() {
         <Layout hideHeader>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100dvh' }}>
                 <div style={{ textAlign: 'center' }}>
-                    <LogoBadge size={80} style={{ borderRadius: '20px', marginBottom: '20px', opacity: 0.6 }} />
+                    <img src={logoBase64} alt="LightWeight" style={{ width: '80px', height: '80px', borderRadius: '20px', marginBottom: '20px', opacity: 0.6 }} />
                     <div style={{ color: T.textMuted, fontSize: '12px', letterSpacing: '0.2em', textTransform: 'uppercase', fontFamily: "'Oswald', sans-serif" }}>Loading...</div>
                 </div>
             </div>
@@ -72,11 +72,16 @@ export function HomeScreen() {
                     `,
                 }} />
 
-                <LogoBadge size={110} style={{
+                {/* Logo — large, centred */}
+                <div style={{
+                    width: '110px', height: '110px', borderRadius: '26px',
+                    overflow: 'hidden',
+                    border: `3px solid rgba(106,63,199,0.50)`,
+                    boxShadow: `0 0 40px rgba(106,63,199,0.35), 0 0 80px rgba(106,63,199,0.10), 0 24px 60px rgba(0,0,0,0.8)`,
                     marginBottom: '22px', position: 'relative', zIndex: 1,
-                    borderRadius: '26px', border: '3px solid rgba(106,63,199,0.50)',
-                    boxShadow: '0 0 40px rgba(106,63,199,0.35), 0 0 80px rgba(106,63,199,0.10), 0 24px 60px rgba(0,0,0,0.8)'
-                }} />
+                }}>
+                    <img src={logoBase64} alt="LightWeight" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
 
                 {/* Wordmark */}
                 <div style={{

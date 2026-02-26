@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Home, History, Settings, CalendarDays } from 'lucide-react';
-import { LogoBadge } from './LogoBadge';
+import { logoBase64 } from '../lib/logoBase64';
 
 // ─── Rusted / Industrial theme ───────────────────────────────────────────────
 // All colours desaturated, aged, muted — concrete, iron, rust
@@ -94,7 +94,15 @@ export function Layout({ children, title, subtitle, right, hideHeader }: LayoutP
 
                     {/* Centre — logo + wordmark */}
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0px' }}>
-                        <LogoBadge size={44} style={{ marginBottom: '6px', borderRadius: '12px', border: '2px solid rgba(106,63,199,0.45)', boxShadow: '0 0 18px rgba(106,63,199,0.28)' }} />
+                        <div style={{
+                            width: '44px', height: '44px', borderRadius: '12px',
+                            overflow: 'hidden',
+                            border: `2px solid rgba(106,63,199,0.45)`,
+                            boxShadow: `0 0 18px rgba(106,63,199,0.30), 0 0 40px rgba(106,63,199,0.08), inset 0 0 10px rgba(0,0,0,0.7)`,
+                            marginBottom: '6px',
+                        }}>
+                            <img src={logoBase64} alt="LightWeight" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        </div>
                         <div style={{
                             fontFamily: "'Oswald', sans-serif",
                             fontSize: '17px', fontWeight: 700, letterSpacing: '0.14em',
