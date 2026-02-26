@@ -1,4 +1,5 @@
-import { Layout, T } from '../components/Layout';
+import { Layout } from '../components/Layout';
+import { T } from '../lib/theme';
 import { useSettings } from '../lib/useSettings';
 
 export function SettingsScreen() {

@@ -6,7 +6,8 @@ import type { Exercise } from '../lib/supabase';
 import { WorkoutDatabase } from '../components/WorkoutDatabase';
 import { AIAlternativeModal } from '../components/AIAlternativeModal';
 import { VideoModal } from '../components/VideoModal';
-import { Layout, T } from '../components/Layout';
+import { Layout } from '../components/Layout';
+import { T } from '../lib/theme';
 
 const SESSION_MINUTES = 30;
 
@@ -45,7 +46,6 @@ export function SessionScreen() {
             setTimeLeft(p => {
                 if (p <= 1) { clearInterval(timerRef.current); setIsComplete(true); return 0; }
                 const next = p - 1;
-                // Fire 10-min milestone alerts
                 ALERTS.forEach(a => {
                     if (!firedAlerts.current.has(a.at) && next <= a.at) {
                         firedAlerts.current.add(a.at);
@@ -118,13 +118,13 @@ export function SessionScreen() {
 
             {/* 10-min alert overlay */}
             {alertMsg && (
-                <div style={{ position: 'fixed', inset: 0, zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(5,5,8,0.9)', backdropFilter: 'blur(20px)', animation: 'fadeIn 0.3s ease-out' }}>
+                <div style={{ position: 'fixed', inset: 0, zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(5,5,8,0.92)', backdropFilter: 'blur(20px)' }}>
                     <div style={{ textAlign: 'center', padding: '40px' }}>
                         <div style={{ width: '64px', height: '64px', borderRadius: '50%', background: `radial-gradient(circle, ${T.violetGlow}, transparent)`, border: `2px solid ${T.borderGlow}`, display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px', boxShadow: `0 0 40px ${T.violetGlow}` }}>
                             <Zap size={28} style={{ color: '#a78bfa' }} />
                         </div>
                         {alertMsg.split('\n').map((line, i) => (
-                            <div key={i} style={{ fontFamily: "'Oswald', sans-serif", fontSize: i === 0 ? '28px' : '16px', fontWeight: 700, letterSpacing: '0.1em', color: i === 0 ? T.textPrimary : T.textMuted, lineHeight: 1.4 }}>{line}</div>
+                            <div key={i} style={{ fontFamily: "'Oswald', sans-serif", fontSize: i === 0 ? '28px' : '16px', fontWeight: 700, letterSpacing: '0.1em', color: i === 0 ? T.textPrimary : T.textMuted, lineHeight: 1.6 }}>{line}</div>
                         ))}
                     </div>
                 </div>
@@ -169,14 +169,14 @@ export function SessionScreen() {
                     </div>
                 </div>
 
-                {/* Focus Mode Panel (replaces YouTube) */}
+                {/* Focus Mode Panel */}
                 <div style={{ background: T.surface, border: `1px solid ${T.border}`, borderRadius: '18px', padding: '24px 20px', position: 'relative', overflow: 'hidden', textAlign: 'center' }}>
                     <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: `linear-gradient(90deg, transparent, ${T.violet}, ${T.crimson}, transparent)` }} />
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginBottom: '16px' }}>
                         <Activity size={14} style={{ color: '#a78bfa' }} />
                         <span style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: T.textMuted }}>Focus Mode</span>
                     </div>
-                    <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '52px', fontWeight: 700, color: T.textPrimary, lineHeight: 1, marginBottom: '8px', background: `linear-gradient(135deg, ${T.textPrimary}, #a78bfa)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                    <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: '52px', fontWeight: 700, lineHeight: 1, marginBottom: '8px', background: `linear-gradient(135deg, ${T.textPrimary}, #a78bfa)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
                         {String(elapsedMins).padStart(2, '0')}
                     </div>
                     <div style={{ fontSize: '11px', color: T.textMuted, letterSpacing: '0.14em', textTransform: 'uppercase', marginBottom: '20px' }}>minutes in</div>

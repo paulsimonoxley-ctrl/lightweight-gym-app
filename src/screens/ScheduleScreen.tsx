@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { CalendarDays, Plus, X, Play } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import type { Workout } from '../lib/supabase';
-import { Layout, T } from '../components/Layout';
+import { Layout } from '../components/Layout';
+import { T } from '../lib/theme';
 
 interface Commitment {
     id: string;

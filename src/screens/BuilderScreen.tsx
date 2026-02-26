@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import { Plus, Trash2, Edit2, ChevronDown, ChevronUp, Save, X, GripVertical } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import type { Workout, Exercise } from '../lib/supabase';
-import { Layout, T } from '../components/Layout';
+import { Layout } from '../components/Layout';
+import { T } from '../lib/theme';
 import { useSettings } from '../lib/useSettings';
 
 export function BuilderScreen() {

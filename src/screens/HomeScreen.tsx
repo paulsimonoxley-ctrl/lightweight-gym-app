@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { Play, ChevronRight, Calendar } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import type { Workout } from '../lib/supabase';
-import { Layout, T, muteWorkoutColor } from '../components/Layout';
+import { Layout } from '../components/Layout';
+import { T, muteWorkoutColor } from '../lib/theme';
 import { logoBase64 } from '../lib/logoBase64';
 
 interface SessionWithWorkout {
