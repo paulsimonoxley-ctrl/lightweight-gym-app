@@ -4,6 +4,7 @@ import { SessionScreen } from './screens/SessionScreen';
 import { HistoryScreen } from './screens/HistoryScreen';
 import { BuilderScreen } from './screens/BuilderScreen';
 import { ScheduleScreen } from './screens/ScheduleScreen';
+import { SettingsScreen } from './screens/SettingsScreen';
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <Route path="/history" element={<HistoryScreen />} />
         <Route path="/schedule" element={<ScheduleScreen />} />
         <Route path="/builder" element={<BuilderScreen />} />
+        <Route path="/settings" element={<SettingsScreen />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>

@@ -1,6 +1,6 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Home, History, Settings, CalendarDays } from 'lucide-react';
+import { Home, History, Settings, CalendarDays, Dumbbell } from 'lucide-react';
 import { logoBase64 } from '../lib/logoBase64';
 
 // ─── Rusted / Industrial theme ───────────────────────────────────────────────
@@ -53,7 +53,8 @@ export function Layout({ children, title, subtitle, right, hideHeader }: LayoutP
         { path: '/', icon: Home, label: 'Home' },
         { path: '/history', icon: History, label: 'History' },
         { path: '/schedule', icon: CalendarDays, label: 'Schedule' },
-        { path: '/builder', icon: Settings, label: 'Builder' },
+        { path: '/builder', icon: Dumbbell, label: 'Builder' },
+        { path: '/settings', icon: Settings, label: 'Settings' },
     ];
 
     return (
